@@ -74,7 +74,6 @@ class Util:
     def remove_at(i, s):
         return s[:i] + s[i+1:]
     
-    # https://www.semicolonworld.com/question/55159/python-inflate-and-deflate-implementations
     def deflate(content):
         try:
             inflated = zlib.decompress(content , -15)
