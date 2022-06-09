@@ -10,7 +10,9 @@ Saitama caught our attention for two reasons: the stealth way the C2 messages ar
 
 Command and control (C2) over DNS is not new. It is common for a Victim <-> C2 communication occurs in the following way: data can be exfiltrated or answered from victim to a C2 encoded in the hostname portion of the FQDN (i.e., oxn009lc7n5887k96c4zfckes6uif.rootdomain.com). In the other rand, additional commands or payloads can be downloaded from the C2 by the victim by querying TXT records to the attacker's controlled DNS server. 
 
-Saitama's implementation differs from this common scenario by not using TXT records to encapsulate orders from the C2 to the victim. Instead, the orders are encapsuated in the IPV4 addresses themselves. For example, to issue a command 'whoami', the server will answer two IP addresses: 70.**119**.**104**.**111** and **97**.**109**.**105**.49. The first octet (70) has a special meaning to the Saitama (a command will be issued), and the following octets are the ASCII code of the 'whoami' characters: **w=119**, **h=104**, **o=111**, and so on until **i=105**. The remaining octet is discarded. 
+Saitama's implementation differs from this common scenario by not using TXT or other records able to store large data to encapsulate orders from the C2 to the victim. Instead, the orders are encapsuated in the IPV4 addresses themselves. For example, to issue a command 'whoami', the server will answer two IP addresses: 70.**119**.**104**.**111** and **97**.**109**.**105**.49. The first octet (70) has a special meaning to the Saitama (a command will be issued), and the following octets are the ASCII code of the 'whoami' characters: **w=119**, **h=104**, **o=111**, and so on until **i=105**. The remaining octet is discarded. 
+
+Look at the image below the communication between a victim and the C2 by issuing the command 'whoami':
 
 ![saitama drawio](https://user-images.githubusercontent.com/32780523/172954623-f4e5e363-0cab-4712-a7b8-b7d17fe9e8b4.png)
 
