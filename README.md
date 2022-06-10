@@ -22,11 +22,12 @@ Look at the image below the communication between a victim and the C2 by issuing
 After analyzing Saitama's code, we developed a simple tool (hosted in this repository) capable of translating the messages issued by the invected victim to the C2 server. It may be helpful for those who face Saimanta or variants messages and need to try to discover what data is being sent to the C2.
 
 Usage examples:
+1. Passing one FQDN. In this case, the first response from Saitama do C2 after executing the command 'ver' on Windows system:
 ```
 python saitama_test.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com
 agent_id: 114,  msg_type: 1,    msg_offset:0,   msg_size:43,    msg_content:b'9Microsoft W',    request:vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com,    count:4749
 ```
-
+2. Passing multiple FQDN at once. In this case, all the responses from Saitama to C2 after executing 'ver' command:
 ```
 python saitama_test.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com oxn009lc7n5887k96c4zfckes6uif.joexpediagroup.com pqxwwk9cyl1upnxwyqwinn0wgzui5.uber-asia.com w7irwrisb5lxwkow81udr.uber-asia.com 
 agent_id: 114,  msg_type: 1,    msg_offset:0,   msg_size:43,    msg_content:b'9Microsoft W',    request:vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com,    count:4749
@@ -34,6 +35,8 @@ agent_id: 114,  msg_type: 1,    msg_offset:12,  msg_size:None,  msg_content:b'in
 agent_id: 114,  msg_type: 1,    msg_offset:24,  msg_size:None,  msg_content:b'ion 10.0.183',    request:pqxwwk9cyl1upnxwyqwinn0wgzui5.uber-asia.com,    count:4751
 agent_id: 114,  msg_type: 1,    msg_offset:36,  msg_size:None,  msg_content:b'63.418]', request:w7irwrisb5lxwkow81udr.uber-asia.com,    count:4752
 ```
+Notice that the string **"Microsoft Windows [Version 10.0.18363.418]"** was sent to the C2 server in four requests.
+
 
 ### Saitama sample
 e0872958b8d3824089e5e1cfab03d9d98d22b9bcb294463818d721380075a52d
