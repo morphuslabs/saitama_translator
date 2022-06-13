@@ -24,12 +24,12 @@ After analyzing Saitama's code, we developed a simple tool (hosted in this repos
 Usage examples:
 1. Passing one FQDN. In this case, the first response from Saitama do C2 after executing the command 'ver' on Windows system:
 ```
-$ python saitama_test.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com
+$ python translate.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com
 agent_id: 114,  msg_type: 1,    msg_offset:0,   msg_size:43,    msg_content:b'9Microsoft W',    request:vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com,    count:4749
 ```
 2. Passing multiple FQDN at once. In this case, all the responses from Saitama to C2 after executing 'ver' command:
 ```
-$ python saitama_test.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com oxn009lc7n5887k96c4zfckes6uif.joexpediagroup.com pqxwwk9cyl1upnxwyqwinn0wgzui5.uber-asia.com w7irwrisb5lxwkow81udr.uber-asia.com
+$ python translate.py vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com oxn009lc7n5887k96c4zfckes6uif.joexpediagroup.com pqxwwk9cyl1upnxwyqwinn0wgzui5.uber-asia.com w7irwrisb5lxwkow81udr.uber-asia.com
 agent_id: 114,  msg_type: 1,    msg_offset:0,   msg_size:43,    msg_content:b'9Microsoft W',    request:vy5xxxxvzz650coacbsf03f2jkviwui9.joexpediagroup.com,    count:4749
 agent_id: 114,  msg_type: 1,    msg_offset:12,  msg_size:None,  msg_content:b'indows [Vers',    request:oxn009lc7n5887k96c4zfckes6uif.joexpediagroup.com,       count:4750
 agent_id: 114,  msg_type: 1,    msg_offset:24,  msg_size:None,  msg_content:b'ion 10.0.183',    request:pqxwwk9cyl1upnxwyqwinn0wgzui5.uber-asia.com,    count:4751
